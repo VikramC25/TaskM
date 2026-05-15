@@ -322,7 +322,7 @@ input:focus, select:focus, textarea:focus {
 .task-item .task-badges { display: flex; gap: 8px; flex-shrink: 0; }
 
 /* Members panel */
-.members-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.members-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .member-item {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 16px;
@@ -330,8 +330,10 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 12px;
 }
-.member-info { display: flex; align-items: center; gap: 12px; }
+.member-info { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; flex-wrap: wrap; }
 .member-avatar {
   width: 38px; height: 38px;
   border-radius: 50%;
@@ -339,9 +341,11 @@ input:focus, select:focus, textarea:focus {
   border: 1px solid var(--border-glass);
   display: flex; align-items: center; justify-content: center;
   font-size: 0.85rem; font-weight: 700; color: var(--accent-violet);
+  flex-shrink: 0;
 }
-.member-details h4 { font-size: 0.9rem; font-weight: 600; color: var(--text-primary);}
-.member-details p { font-size: 0.75rem; color: var(--text-muted); }
+.member-details { min-width: 0; flex: 1; }
+.member-details h4 { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.member-details p { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 /* ========== MODAL ========== */
 .modal-overlay {
