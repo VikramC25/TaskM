@@ -79,6 +79,11 @@ export default function DashboardPage() {
               <div className="recent-task-item">
                 <div className="recent-task-info">
                   <h4>{task.title}</h4>
+                  {task.description && (
+                    <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px", marginBottom: "4px" }}>
+                      {task.description}
+                    </div>
+                  )}
                   <p>{task.project?.name} {task.assignee ? `• ${task.assignee.name}` : ""}</p>
                 </div>
                 <div className="recent-task-meta">

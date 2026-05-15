@@ -223,6 +223,11 @@ export default function ProjectDetailPage() {
               <div className="task-item" key={task._id}>
                 <div className="task-main">
                   <div className="task-title">{task.title}</div>
+                  {task.description && (
+                    <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px", marginBottom: "4px" }}>
+                      {task.description}
+                    </div>
+                  )}
                   <div className="task-sub">
                     {task.assignee && <span>👤 {task.assignee.name}</span>}
                     {task.dueDate && (
